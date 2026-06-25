@@ -31,3 +31,35 @@ def show_image(
     plt.tight_layout()
 
     plt.show()
+
+def show_histogram(
+    image,
+    title="Histogram",
+    bins=200,
+    log=False
+):
+
+    arr = image.ravel()
+
+    arr = arr[np.isfinite(arr)]
+
+    plt.figure(figsize=(8,4))
+
+    plt.hist(
+        arr,
+        bins=bins
+    )
+
+    if log:
+        plt.yscale("log")
+
+    plt.title(title)
+
+    plt.xlabel("Pixel Value")
+
+    plt.ylabel("Frequency")
+
+    plt.tight_layout()
+
+    plt.show()
+
