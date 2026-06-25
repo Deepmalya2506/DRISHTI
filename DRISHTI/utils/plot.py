@@ -63,3 +63,30 @@ def show_histogram(
 
     plt.show()
 
+def percentile_stretch(
+    image,
+    low=2,
+    high=98
+):
+
+    p_low = np.percentile(image, low)
+
+    p_high = np.percentile(image, high)
+
+    return np.clip(image, p_low, p_high)
+
+def log_scale(image):
+
+    image = image.astype(np.float64)
+
+    return np.log10(image + 1)
+
+def rgb_composite(r,g,b):
+
+    rgb = np.dstack([r,g,b])
+
+    rgb -= rgb.min()
+
+    rgb /= rgb.max()
+
+    return rgb
