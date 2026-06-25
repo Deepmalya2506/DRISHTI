@@ -1,0 +1,6 @@
+rasterio[gdal]
+numpy
+scipy
+matplotlib
+scikit-image
+pandas
