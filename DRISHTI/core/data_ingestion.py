@@ -141,8 +141,3 @@ def build_drishti_dataset():
     }
 
     return dataset
-
-
-if __name__ == "__main__":
-
-    dataset = build_drishti_dataset()

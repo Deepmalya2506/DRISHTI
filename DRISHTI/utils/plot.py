@@ -90,3 +90,12 @@ def rgb_composite(r,g,b):
     rgb /= rgb.max()
 
     return rgb
+
+def normalize(image):
+
+    image = image.astype(np.float64)
+
+    mn = np.nanmin(image)
+    mx = np.nanmax(image)
+
+    return (image - mn) / (mx - mn + 1e-12)
