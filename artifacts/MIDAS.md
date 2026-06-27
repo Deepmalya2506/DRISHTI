@@ -121,6 +121,6 @@ Matches T3 output dimensions — consistent with SRI XML azimuth_looks=18.
 ---
 
 ## Yamaguchi-YR4 Decomposition
-![Yamaguchi RGB Screenshot](YR4_Decomp.png)
+![Yamaguchi RGB Screenshot](images/YR4_Decomp.png)
 
 

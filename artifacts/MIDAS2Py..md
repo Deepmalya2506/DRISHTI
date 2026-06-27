@@ -1,5 +1,8 @@
-// This is the cmd script to extract the MIDAS outputs raw .bin files to .tif for using in Python 
+# MIDAS Output Extraction — CMD Script
 
+This script converts raw `.bin` files from MIDAS into `.tif` format for use in Python.
+
+```bat
 cd C:\MidasV4.2.4
 call EnvSet.bat
 
@@ -18,3 +21,9 @@ gdal\bin\gdal\apps\gdal_translate -of GTiff -ot Float32 "%ML%\T3\T3_FILT\T12_Rea
 :: 3. Yamaguchi Physical Structures (For Hazard Mapping)
 gdal\bin\gdal\apps\gdal_translate -of GTiff -ot Float32 "%ML%\T3\T3_FILT\Yamaguchi_Y4R\YM4_even.bin" "C:\DRISHTI_POC\7_YAMA_DoubleBounce_Hazard_slant.tif"
 gdal\bin\gdal\apps\gdal_translate -of GTiff -ot Float32 "%ML%\T3\T3_FILT\Yamaguchi_Y4R\YM4_vol.bin"  "C:\DRISHTI_POC\8_YAMA_Volume_Ice_slant.tif"
+```
+
+---
+
+Terminal Window
+![Terminal Window](images\cmd.png)
