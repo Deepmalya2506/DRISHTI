@@ -1,8 +1,10 @@
-rasterio[gdal]
+rasterio
 numpy
 scipy
 matplotlib
 scikit-image
 pandas
-gdal
 opencv-python
+plotly
+nbformat
+pyproj
