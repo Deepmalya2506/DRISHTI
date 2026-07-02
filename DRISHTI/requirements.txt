@@ -8,3 +8,5 @@ opencv-python
 plotly
 nbformat
 pyproj
+seaborn
+statsmodels

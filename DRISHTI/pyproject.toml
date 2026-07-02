@@ -15,4 +15,6 @@ dependencies = [
     "rasterio>=1.4.4",
     "scikit-image>=0.26.0",
     "scipy>=1.17.1",
+    "seaborn>=0.13.2",
+    "statsmodels>=0.14.6",
 ]
