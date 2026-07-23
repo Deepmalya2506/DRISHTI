@@ -71,20 +71,7 @@ $$[T_3] = \langle \vec{k} \cdot \vec{k}^\dagger \rangle = \begin{bmatrix} T_{11}
 
 ---
 
-### 2. Stokes Parameters Computation
-
-From the quasi-monochromatic backscattered electromagnetic wave field $E = [E_x, E_y]^T$, the Stokes vector $\vec{S} = [S_0, S_1, S_2, S_3]^T$ completely characterizes total wave intensity and polarization state[cite: 1]:
-
-$$\begin{aligned}
-S_0 &= \langle |E_x|^2 \rangle + \langle |E_y|^2 \rangle \quad &&\text{(Total Received Backscattered Power)} \\
-S_1 &= \langle |E_x|^2 \rangle - \langle |E_y|^2 \rangle \quad &&\text{(Linear Horizontal vs. Vertical Power Difference)} \\
-S_2 &= 2 \operatorname{Re}\left( \langle E_x E_y^* \rangle \right) \quad &&\text{(Linear $+45^\circ$ vs. $-45^\circ$ Power Difference)} \\
-S_3 &= 2 \operatorname{Im}\left( \langle E_x E_y^* \rangle \right) \quad &&\text{(Right-handed vs. Left-handed Circular Power Difference)}
-\end{aligned}$$
-
----
-
-### 3. Key Polarimetric Radar Metrics
+### 2. Key Polarimetric Radar Metrics
 
 #### Circular Polarization Ratio ($\text{CPR}$)
 Calculates the ratio of Same-Sense ($\sigma_{LL}^\circ$) to Opposite-Sense ($\sigma_{LR}^\circ$) circular polarization backscatter to identify volumetric multiple scattering indicative of water ice[cite: 1]:
@@ -100,7 +87,7 @@ $$\text{DOP} = \frac{\sqrt{S_1^2 + S_2^2 + S_3^2}}{S_0}$$
 
 ---
 
-### 4. Maxwell-Garnett Dielectric Forward Modeling
+### 3. Maxwell-Garnett Dielectric Forward Modeling
 
 To transform radar metrics into quantitative subsurface ice volume fraction ($f$) within the top 5 meters of lunar regolith, DRISHTI implements the Maxwell-Garnett effective medium theory for spherical ice inclusions embedded in a regolith matrix[cite: 1]:
 
@@ -115,7 +102,7 @@ $$\epsilon_{eff} = \epsilon_m \left[ \frac{1 + 2f \left( \frac{\epsilon_i - \eps
 
 ---
 
-### 5. Multi-Criteria Disambiguation Decision Engine
+### 4. Multi-Criteria Disambiguation Decision Engine
 
 To prevent false positives caused by surface roughness or steep crater rims, DRISHTI cross-evaluates radar physics against optical morphology and illumination constraints[cite: 1]:
 
