@@ -127,9 +127,6 @@ The PoC was benchmarked using Chandrayaan-2 DFSAR observations over **Crater Sho
 
 ---
 
-
-![ISRO Banner](./assets/10_thank_you_banner.png)
-
 **"We, as a dedicated team, are excited and humbled to solve this problem and actively contribute to India's Future Lunar Mission."**
 
 [GitHub Repository](https://github.com/Deepmalya2506/DRISHTI)
