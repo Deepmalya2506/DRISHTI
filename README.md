@@ -1,6 +1,6 @@
 <div align="center">
 
-![Banner](assets/Screen%20Recording%202026-07-23%20134933.gif)
+![Banner](assets/banner.png)
 
 # D.R.I.S.H.T.I.
 ### **D**ual-Frequency **R**adar **I**nformed **S**ubsurface **H**ydration & **T**errain **I**ntelligence
@@ -145,7 +145,7 @@ The PoC was benchmarked using Chandrayaan-2 DFSAR observations over **Crater Sho
 ![Crater Elevation](assets/Final_wo_roghness.png) 
 
 ### 3D Terrain & Slope Mesh 
-![3D Terrain Visualization](assets/3d_traversal.png) |
+![Banner](assets/banner.gif) |
 
 ---
 
@@ -177,24 +177,47 @@ The PoC was benchmarked using Chandrayaan-2 DFSAR observations over **Crater Sho
 <h2>👥 Contributors</h2>
 
 <p align="center">
-  <a href="https://github.com/rAdvirtua">
-    <img src="https://avatars.githubusercontent.com/u/179570050?v=4" width="100" style="border-radius:50%; margin:10px;" />
-    <br /><b>Anurag</b><br /><small>AI/ML</small>
-  </a>
-  &nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="https://github.com/GamedAreS2176">
-    <img src="https://avatars.githubusercontent.com/u/181513401?v=4" width="100" style="border-radius:50%; margin:10px;" />
-    <br /><b>Ujaan</b><br /><small>FullStack</small>
-  </a>
-  &nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="https://github.com/RishavKumarMishra2006">
-    <img src="https://avatars.githubusercontent.com/u/211628883?v=4" width="100" style="border-radius:50%; margin:10px;" />
-    <br /><b>Rishav</b><br /><small>UI/UX</small>
-  </a>
+  <table>
+    <tr>
+      <td align="center">
+        <a href="https://github.com/rAdvirtua">
+          <img src="https://avatars.githubusercontent.com/u/179570050?v=4" width="100" style="border-radius:50%;" />
+          <br /><b>Anurag</b>
+        </a>
+        <br /><small>AI/ML</small>
+      </td>
+      <td align="center">
+        <a href="https://github.com/GamedAreS2176">
+          <img src="https://avatars.githubusercontent.com/u/181513401?v=4" width="100" style="border-radius:50%;" />
+          <br /><b>Ujaan</b>
+        </a>
+        <br /><small>FullStack</small>
+      </td>
+      <td align="center">
+        <a href="https://github.com/RishavKumarMishra2006">
+          <img src="https://avatars.githubusercontent.com/u/211628883?v=4" width="100" style="border-radius:50%;" />
+          <br /><b>Rishav</b>
+        </a>
+        <br /><small>UI/UX</small>
+      </td>
+    </tr>
+  </table>
 </p>
 
 
-## Thanking You All
+
+#### With Regards
+> Deepmalya
+
+
+---
+
+## Want to Be a Part of DRISHTI ?
+
+[![Join the Discussion](https://img.shields.io/badge/💬-Ask%20a%20Question-blue?style=for-the-badge&logo=github)](https://github.com/Deepmalya2506/DRISHTI/discussions)
+[![Star Repo](https://img.shields.io/github/stars/Deepmalya2506/DRISHTI?style=for-the-badge&logo=github)](https://github.com/Deepmalya2506/DRISHTI/stargazers)
+[![Contribute Ideas](https://img.shields.io/badge/🤝-Share%20Your%20Idea-green?style=for-the-badge&logo=github)](https://github.com/Deepmalya2506/DRISHTI/issues/new?template=feature_request.md)
+
 
 </div>
 
