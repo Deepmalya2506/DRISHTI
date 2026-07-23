@@ -1,8 +1,8 @@
 <div align="center">
 
+![Banner](assets/Screen%20Recording%202026-07-23%20134933.gif)
 
-![3D Terrain Visualization](assets/banner.png)
-# Project D.R.I.S.H.T.I.
+# D.R.I.S.H.T.I.
 ### **D**ual-Frequency **R**adar **I**nformed **S**ubsurface **H**ydration & **T**errain **I**ntelligence
 
 *A Physics-Informed, Multi-Modal Fusion Framework for Lunar Subsurface Ice Detection and Mission Accessibility*
@@ -175,8 +175,6 @@ The PoC was benchmarked using Chandrayaan-2 DFSAR observations over **Crater Sho
 
 
 <h2>👥 Contributors</h2>
-
-## 👥 Contributors
 
 <p align="center">
   <a href="https://github.com/rAdvirtua">
