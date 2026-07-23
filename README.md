@@ -1,6 +1,6 @@
 <div align="center">
 
-![3D Terrain Visualization](assets\banner.png)
+![3D Terrain Visualization](assets/banner.png)
 
 # Project D.R.I.S.H.T.I.
 ### **D**ual-Frequency **R**adar **I**nformed **S**ubsurface **H**ydration & **T**errain **I**ntelligence
