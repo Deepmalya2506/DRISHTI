@@ -95,7 +95,7 @@ The PoC was benchmarked using Chandrayaan-2 DFSAR observations over **Crater Sho
 ### Data Strip & Region of Interest (ROI) & Shadow Masking & Surface Roughness Analysis
 | Data Strip | Shadow Masking & Surface Roughness Analysis |
 | :---: | :---: |
-| ![DFSAR Strip ROI](assets/raw_strip.png) | ![Radar Decomposition](assets\yamaguchi.png) |
+| ![DFSAR Strip ROI](assets/raw_strip.png) | ![Radar Decomposition](assets/yamaguchi.png) |
 
 ### Elevation & Shadowed Contours
 ![Crater Elevation](assets/Final_wo_roghness.png) 
