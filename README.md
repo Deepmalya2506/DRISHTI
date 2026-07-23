@@ -137,7 +137,7 @@ The complete processing pipeline spans data ingestion, physics analysis, multi-m
 The PoC was benchmarked using Chandrayaan-2 DFSAR observations over **Crater Shoemaker** across a scale of 19 Million pixels.
 
 ### Data Strip & Region of Interest (ROI) & Shadow Masking & Surface Roughness Analysis
-| Data Strip | Shadow Masking & Surface Roughness Analysis |
+| Data Strip | Yamaguchi Decomposition |
 | :---: | :---: |
 | ![DFSAR Strip ROI](assets/raw_strip.png) | ![Radar Decomposition](assets/yamaguchi.png) |
 
@@ -188,8 +188,8 @@ The PoC was benchmarked using Chandrayaan-2 DFSAR observations over **Crater Sho
   </div>
   <div style="flex:0 0 auto; text-align:center;">
     <img src="https://avatars.githubusercontent.com/u/211628883?v=4" width="100" style="border-radius:50%;"/><br/>
-    <a href="https://github.com/RishavKumarMishra2006">UI/UX </a><br/>
-    <small>Data Scientist</small>
+    <a href="https://github.com/RishavKumarMishra2006">Rishav </a><br/>
+    <small>UI/UX</small>
   </div>
 </div>
 
