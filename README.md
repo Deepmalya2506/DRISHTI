@@ -1,5 +1,6 @@
 <div align="center">
 
+![3D Terrain Visualization](assets\banner.png)
 
 # Project D.R.I.S.H.T.I.
 ### **D**ual-Frequency **R**adar **I**nformed **S**ubsurface **H**ydration & **T**errain **I**ntelligence
@@ -7,9 +8,6 @@
 *A Physics-Informed, Multi-Modal Fusion Framework for Lunar Subsurface Ice Detection and Mission Accessibility*
 
 [![Hackathon](https://img.shields.io/badge/ISRO-Bharatiya%20Antariksh%20Hackathon%202026-orange)](https://github.com/Deepmalya2506/DRISHTI)
-[![Python](https://img.shields.io/badge/Python-3.9%2B-blue)](https://www.python.org/)
-[![Docker](https://img.shields.io/badge/Docker-Ready-blue)](https://www.docker.com/)
-[![FastAPI](https://img.shields.io/badge/FastAPI-Deployed-green)](https://fastapi.tiangolo.com/)
 
 </div>
 
@@ -72,7 +70,6 @@ $$\epsilon_{eff} = \epsilon_m \frac{1 + 2f \frac{\epsilon_i - \epsilon_m}{\epsil
 
 *Where $\epsilon_m$ represents matrix permittivity of dry lunar regolith and $\epsilon_i$ represents ice permittivity.*
 
-![Mathematical Architecture & Pipeline](./assets/09_math_architecture.png)
 
 ---
 
@@ -80,7 +77,7 @@ $$\epsilon_{eff} = \epsilon_m \frac{1 + 2f \frac{\epsilon_i - \epsilon_m}{\epsil
 
 The complete processing pipeline spans data ingestion, physics analysis, multi-modal validation, and mission accessibility planning:
 
-![Process Flow Diagram](./assets/04_process_flow_diagram.png)
+![Pipeline](assets\pipeline.png)
 
 ### Pipeline Stages:
 1. **Data Inputs:** Raw DFSAR full-pol data, OHRC imagery, LOLA DEM, and solar illumination models.
@@ -95,20 +92,16 @@ The complete processing pipeline spans data ingestion, physics analysis, multi-m
 
 The PoC was benchmarked using Chandrayaan-2 DFSAR observations over **Crater Shoemaker** across a scale of 19 Million pixels.
 
-### Data Strip & Region of Interest (ROI)
-![DFSAR Strip ROI](./assets/02_dfsar_roi_strip.png)
-
-### Shadow Masking & Surface Roughness Analysis
-![Shadowed Crater Mask & Roughness](./assets/03_shadow_mask_roughness.png)
-
-### Processing Interfaces & Visualizations
-| MIDAS Ingestion & Filtering | Polarimetric Decomposition |
+### Data Strip & Region of Interest (ROI) & Shadow Masking & Surface Roughness Analysis
+| Data Strip | Shadow Masking & Surface Roughness Analysis |
 | :---: | :---: |
-| ![MIDAS Processing](./assets/05_midas_processing.png) | ![Radar Decomposition](./assets/06_radar_decomposition.png) |
+| ![DFSAR Strip ROI](assets\raw_strip.png) | ![Radar Decomposition](assets\yamaguchi.png) |
 
-| Elevation & Shadowed Contours | 3D Terrain & Slope Mesh |
-| :---: | :---: |
-| ![Crater Elevation](./assets/07_elevation_crater_map.png) | ![3D Terrain Visualization](./assets/08_3d_terrain_visualization.png) |
+### Elevation & Shadowed Contours
+![Crater Elevation](assets\Final_wo_roghness.png) 
+
+### 3D Terrain & Slope Mesh 
+![3D Terrain Visualization](assets\3d_traversal.png) |
 
 ---
 
@@ -134,36 +127,6 @@ The PoC was benchmarked using Chandrayaan-2 DFSAR observations over **Crater Sho
 
 ---
 
-## 💰 Cost & Implementation Breakdown
-
-| Module / Item | Cost (₹) | Description |
-| :--- | :---: | :--- |
-| **DFSAR SLI Processing** | ₹1,00,000 | MIDAS import, multilooking, and radar preprocessing |
-| **Polarimetric Filtering** | ₹75,000 | $9\times9$ Refined Lee filtering & speckle suppression |
-| **Radar Feature Extraction** | ₹90,000 | CPR, DOP, coherency matrix ($T_3$), decomposition outputs |
-| **Ice Candidate Modelling** | ₹85,000 | Maxwell-Garnett dielectric modelling & Thompson LUT inversion |
-| **PSR & DSR Masking** | ₹60,000 | Thermal cold-trap validation & shadow region filtering |
-| **Terrain Hazard Mapping** | ₹75,000 | LOLA DEM slope and surface roughness generation |
-| **Candidate Clustering & Validation** | ₹70,000 | Density clustering & false-positive rejection |
-| **Reverse Path Planning** | ₹95,000 | Landing-site feasibility, rover traverse & mission routing |
-| **Total Estimated Budget** | **₹6,50,000** | *(Estimated implementation cost)* |
-
----
-
-## 👥 Team "From Light Years Away"
-
-Developed at **Institute of Engineering & Management, Kolkata** for the **Bharatiya Antariksh Hackathon 2026 (ISRO)**.
-
-| Member | Role | Institution |
-| :--- | :--- | :--- |
-| **Deepmalya Koley** | Team Leader | Institute of Engineering & Management, Kolkata |
-| **Rishav Kumar Mishra** | Team Member | Institute of Engineering & Management, Kolkata |
-| **Anurag Paul** | Team Member | Institute of Engineering & Management, Kolkata |
-| **Ujaan Mukherjee** | Team Member | Institute of Engineering & Management, Kolkata |
-
----
-
-<div align="center">
 
 ![ISRO Banner](./assets/10_thank_you_banner.png)
 
