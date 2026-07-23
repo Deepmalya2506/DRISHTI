@@ -144,8 +144,12 @@ The PoC was benchmarked using Chandrayaan-2 DFSAR observations over **Crater Sho
 ### Elevation & Shadowed Contours
 ![Crater Elevation](assets/Final_wo_roghness.png) 
 
-### 3D Terrain & Slope Mesh 
-![Banner](assets/banner.gif) |
+## 3D Terrain & Slope Mesh
+
+<p align="center">
+  <img src="assets/3D_terrain.gif" alt="3D_terrain" />
+</p>
+
 
 ---
 
