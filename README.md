@@ -175,23 +175,35 @@ The PoC was benchmarked using Chandrayaan-2 DFSAR observations over **Crater Sho
 
 
 <h2>👥 Contributors</h2>
-<div style="display:flex; overflow-x:auto; gap:20px; padding:10px;">
-  <div style="flex:0 0 auto; text-align:center;">
-    <img src="https://avatars.githubusercontent.com/u/179570050?v=4" width="100" style="border-radius:50%;"/><br/>
-    <a href="https://github.com/rAdvirtua">Anurag</a><br/>
-    <small>AI/ML</small>
-  </div>
-  <div style="flex:0 0 auto; text-align:center;">
-    <img src="https://avatars.githubusercontent.com/u/181513401?v=4" width="100" style="border-radius:50%;"/><br/>
-    <a href="https://github.com/GamedAreS2176">Ujaan</a><br/>
-    <small>FullStack</small>
-  </div>
-  <div style="flex:0 0 auto; text-align:center;">
-    <img src="https://avatars.githubusercontent.com/u/211628883?v=4" width="100" style="border-radius:50%;"/><br/>
-    <a href="https://github.com/RishavKumarMishra2006">Rishav </a><br/>
-    <small>UI/UX</small>
-  </div>
-</div>
+## 👥 Contributors
+
+<p align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <a href="https://github.com/rAdvirtua">
+          <img src="https://avatars.githubusercontent.com/u/179570050?v=4" width="100" style="border-radius:50%;" />
+          <br /><b>Anurag</b>
+        </a>
+        <br /><small>AI/ML</small>
+      </td>
+      <td align="center">
+        <a href="https://github.com/GamedAreS2176">
+          <img src="https://avatars.githubusercontent.com/u/181513401?v=4" width="100" style="border-radius:50%;" />
+          <br /><b>Ujaan</b>
+        </a>
+        <br /><small>FullStack</small>
+      </td>
+      <td align="center">
+        <a href="https://github.com/RishavKumarMishra2006">
+          <img src="https://avatars.githubusercontent.com/u/211628883?v=4" width="100" style="border-radius:50%;" />
+          <br /><b>Rishav</b>
+        </a>
+        <br /><small>UI/UX</small>
+      </td>
+    </tr>
+  </table>
+</p>
 
 ## Thanking You All
 
