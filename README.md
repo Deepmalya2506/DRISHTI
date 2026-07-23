@@ -204,6 +204,13 @@ The PoC was benchmarked using Chandrayaan-2 DFSAR observations over **Crater Sho
         </a>
         <br /><small>UI/UX</small>
       </td>
+      <td align="center">
+        <a href="https://github.com/Deepmalya2506">
+          <img src="https://avatars.githubusercontent.com/u/172296365?v=4" width="100" style="border-radius:50%;" />
+          <br /><b>Deepmalya</b>
+        </a>
+        <br /><small>AI/ML</small>
+      </td>
     </tr>
   </table>
 </p>
