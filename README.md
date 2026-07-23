@@ -1,7 +1,7 @@
 <div align="center">
 
-![3D Terrain Visualization](assets/banner.png)
 
+![3D Terrain Visualization](assets/banner.png)
 # Project D.R.I.S.H.T.I.
 ### **D**ual-Frequency **R**adar **I**nformed **S**ubsurface **H**ydration & **T**errain **I**ntelligence
 
@@ -27,7 +27,7 @@
 
 ---
 
-## 🌌 Overview
+##  Overview
 
 **Project D.R.I.S.H.T.I** is a unified physics-constrained framework developed for the **Bharatiya Antariksh Hackathon 2026**. It integrates fully polarimetric radar scattering physics (CPR-FP, DOP, SRI), Maxwell-Garnett dielectric mixing models, kinematic geomorphology, and mobility-aware path planning.
 
@@ -53,23 +53,80 @@ Traditional radar-based detection methods often ignore spatial terrain heterogen
 
 ---
 
-## 🔬 Physics Core & Mathematical Foundation
+## Physics Core & Mathematical Foundation
 
-DRISHTI uses full-polarimetric radar processing and scattering physics to eliminate false positives:
+> *"To distinguish true volumetric ice scattering from topographic phase noise, DRISHTI models full-polarimetric radar vector fields, dielectric mixing behavior, and surface-subsurface scattering mechanics within a unified mathematical framework."*
 
-* **Polarimetric Disambiguation Rules (Crater Shoemaker PoC):**
-  * $\text{High CPR} + \text{Low DOP} \implies \text{Volumetric multiple-scattering (True Ice Candidate)}$
-  * $\text{High CPR} + \text{Slope} (>12^\circ) \implies \text{Dihedral surface roughness / Rocky Ejecta (False Positive)}$
-  * $\text{PSR Mask} + \text{CPR Anomaly} \implies \text{Thermally plausible cold trap ice zone}$
-  * $\text{High CPR} + \text{Low OHRC-SRI} \implies \text{Decoupled surface roughness (Subsurface Volumetric Ice)}$
+---
 
-### Maxwell-Garnett Dielectric Modeling
-To estimate effective permittivity ($\epsilon_{eff}$) and ice volume fraction ($f$), the framework models the dielectric behavior of regolith-ice mixtures:
+### 1. Polarimetric Vector Formulation & Coherency Matrix $[T_3]$
 
-$$\epsilon_{eff} = \epsilon_m \frac{1 + 2f \frac{\epsilon_i - \epsilon_m}{\epsilon_i + 2\epsilon_m}}{1 - f \frac{\epsilon_i - \epsilon_m}{\epsilon_i + 2\epsilon_m}}$$
+The polarimetric target vector $\vec{k}$ is constructed from the complex scattering matrix elements $(S_{HH}, S_{VV}, S_{HV})$ assuming target reciprocity ($S_{HV} = S_{VH}$)[cite: 1]:
 
-*Where $\epsilon_m$ represents matrix permittivity of dry lunar regolith and $\epsilon_i$ represents ice permittivity.*
+$$\vec{k} = \frac{1}{\sqrt{2}} \begin{bmatrix} S_{HH} + S_{VV} \\ S_{HH} - S_{VV} \\ 2S_{HV} \end{bmatrix}$$
 
+Applying spatially averaged multilooking and $9 \times 9$ Refined Lee speckle filtering yields the $3 \times 3$ Coherency Matrix $[T_3]$[cite: 1]:
+
+$$[T_3] = \langle \vec{k} \cdot \vec{k}^\dagger \rangle = \begin{bmatrix} T_{11} & T_{12} & T_{13} \\ T_{21} & T_{22} & T_{23} \\ T_{31} & T_{32} & T_{33} \end{bmatrix}$$
+
+---
+
+### 2. Stokes Parameters Computation
+
+From the quasi-monochromatic backscattered electromagnetic wave field $E = [E_x, E_y]^T$, the Stokes vector $\vec{S} = [S_0, S_1, S_2, S_3]^T$ completely characterizes total wave intensity and polarization state[cite: 1]:
+
+$$\begin{aligned}
+S_0 &= \langle |E_x|^2 \rangle + \langle |E_y|^2 \rangle \quad &&\text{(Total Received Backscattered Power)} \\
+S_1 &= \langle |E_x|^2 \rangle - \langle |E_y|^2 \rangle \quad &&\text{(Linear Horizontal vs. Vertical Power Difference)} \\
+S_2 &= 2 \operatorname{Re}\left( \langle E_x E_y^* \rangle \right) \quad &&\text{(Linear $+45^\circ$ vs. $-45^\circ$ Power Difference)} \\
+S_3 &= 2 \operatorname{Im}\left( \langle E_x E_y^* \rangle \right) \quad &&\text{(Right-handed vs. Left-handed Circular Power Difference)}
+\end{aligned}$$
+
+---
+
+### 3. Key Polarimetric Radar Metrics
+
+#### Circular Polarization Ratio ($\text{CPR}$)
+Calculates the ratio of Same-Sense ($\sigma_{LL}^\circ$) to Opposite-Sense ($\sigma_{LR}^\circ$) circular polarization backscatter to identify volumetric multiple scattering indicative of water ice[cite: 1]:
+
+$$\text{CPR} = \frac{\sigma_{LL}^\circ}{\sigma_{LR}^\circ} = \frac{S_0 - S_3}{S_0 + S_3}$$
+
+$$\text{CPR} \begin{cases} < 1.0 & \text{Dry Regolith / Single-bounce Surface Scattering} \\ \approx 1.0 & \text{Surface Roughness / Rocky Ejecta Blocks} \\ > 1.0 & \text{Subsurface Water Ice / Volumetric Multiple Scattering} \end{cases}$$
+
+#### Degree of Polarization ($\text{DOP}$)
+Quantifies the proportion of polarized wave energy relative to total power, isolating coherent surface reflections from depolarized subsurface scatter[cite: 1]:
+
+$$\text{DOP} = \frac{\sqrt{S_1^2 + S_2^2 + S_3^2}}{S_0}$$
+
+---
+
+### 4. Maxwell-Garnett Dielectric Forward Modeling
+
+To transform radar metrics into quantitative subsurface ice volume fraction ($f$) within the top 5 meters of lunar regolith, DRISHTI implements the Maxwell-Garnett effective medium theory for spherical ice inclusions embedded in a regolith matrix[cite: 1]:
+
+$$\epsilon_{eff} = \epsilon_m \left[ \frac{1 + 2f \left( \frac{\epsilon_i - \epsilon_m}{\epsilon_i + 2\epsilon_m} \right)}{1 - f \left( \frac{\epsilon_i - \epsilon_m}{\epsilon_i + 2\epsilon_m} \right)} \right]$$
+
+| Parameter | Physical Interpretation | Value / Constraint |
+| :--- | :--- | :--- |
+| $\epsilon_{eff}$ | Measured Effective Permittivity | $2.70 \text{ to } 3.15$[cite: 1] |
+| $\epsilon_m$ | Permittivity of Dry Lunar Regolith Matrix | $\approx 2.70$[cite: 1] |
+| $\epsilon_i$ | Permittivity of Pure Water Ice Inclusions | $\approx 3.15$[cite: 1] |
+| $f$ | Subsurface Ice Volume Fraction | $0.0 \le f \le 1.0$[cite: 1] |
+
+---
+
+### 5. Multi-Criteria Disambiguation Decision Engine
+
+To prevent false positives caused by surface roughness or steep crater rims, DRISHTI cross-evaluates radar physics against optical morphology and illumination constraints[cite: 1]:
+
+$$
+\begin{aligned}
+\text{High CPR} + \text{Low DOP} &\implies \mathbf{\text{Volumetric Scattering (High-Confidence Subsurface Ice)}} \\
+\text{High CPR} + \text{Slope} > 12^\circ &\implies \mathbf{\text{Dihedral Roughness / Rocky Ejecta (False Positive Rejection)}} \\
+\text{PSR / DSR Mask} + \text{CPR Anomaly} &\implies \mathbf{\text{Thermally Stable Cold-Trap Ice Zone}} \\
+\text{High CPR} + \text{Low SRI} &\implies \mathbf{\text{Decoupled Surface Roughness (Subsurface Ice Deposit)}}
+\end{aligned}
+$$
 
 ---
 
@@ -117,7 +174,7 @@ The PoC was benchmarked using Chandrayaan-2 DFSAR observations over **Crater Sho
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 * **Modeling & Processing:** Python, NumPy, SciPy, Pandas, OpenCV-Python, scikit-image, PyProj, Statsmodels, MIDAS
 * **Radar & Geospatial Analysis:** QGIS, GDAL Driver, Rasterio
@@ -129,6 +186,28 @@ The PoC was benchmarked using Chandrayaan-2 DFSAR observations over **Crater Sho
 
 **"We, as a dedicated team, are excited and humbled to solve this problem and actively contribute to India's Future Lunar Mission."**
 
-[GitHub Repository](https://github.com/Deepmalya2506/DRISHTI)
+
+<h2>👥 Contributors</h2>
+<div style="display:flex; overflow-x:auto; gap:20px; padding:10px;">
+  <div style="flex:0 0 auto; text-align:center;">
+    <img src="https://avatars.githubusercontent.com/u/179570050?v=4" width="100" style="border-radius:50%;"/><br/>
+    <a href="https://github.com/rAdvirtua">Anurag</a><br/>
+    <small>AI/ML</small>
+  </div>
+  <div style="flex:0 0 auto; text-align:center;">
+    <img src="https://avatars.githubusercontent.com/u/181513401?v=4" width="100" style="border-radius:50%;"/><br/>
+    <a href="https://github.com/GamedAreS2176">Ujaan</a><br/>
+    <small>FullStack</small>
+  </div>
+  <div style="flex:0 0 auto; text-align:center;">
+    <img src="https://avatars.githubusercontent.com/u/211628883?v=4" width="100" style="border-radius:50%;"/><br/>
+    <a href="https://github.com/RishavKumarMishra2006">UI/UX </a><br/>
+    <small>Data Scientist</small>
+  </div>
+</div>
+
+## Thanking You All
 
 </div>
+
+
