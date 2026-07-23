@@ -77,7 +77,7 @@ $$\epsilon_{eff} = \epsilon_m \frac{1 + 2f \frac{\epsilon_i - \epsilon_m}{\epsil
 
 The complete processing pipeline spans data ingestion, physics analysis, multi-modal validation, and mission accessibility planning:
 
-![Pipeline](assets\pipeline.png)
+![Pipeline](assets/pipeline.png)
 
 ### Pipeline Stages:
 1. **Data Inputs:** Raw DFSAR full-pol data, OHRC imagery, LOLA DEM, and solar illumination models.
@@ -95,13 +95,13 @@ The PoC was benchmarked using Chandrayaan-2 DFSAR observations over **Crater Sho
 ### Data Strip & Region of Interest (ROI) & Shadow Masking & Surface Roughness Analysis
 | Data Strip | Shadow Masking & Surface Roughness Analysis |
 | :---: | :---: |
-| ![DFSAR Strip ROI](assets\raw_strip.png) | ![Radar Decomposition](assets\yamaguchi.png) |
+| ![DFSAR Strip ROI](assets/raw_strip.png) | ![Radar Decomposition](assets\yamaguchi.png) |
 
 ### Elevation & Shadowed Contours
-![Crater Elevation](assets\Final_wo_roghness.png) 
+![Crater Elevation](assets/Final_wo_roghness.png) 
 
 ### 3D Terrain & Slope Mesh 
-![3D Terrain Visualization](assets\3d_traversal.png) |
+![3D Terrain Visualization](assets/3d_traversal.png) |
 
 ---
 
