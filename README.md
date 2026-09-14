@@ -15,7 +15,7 @@
 
 ## 📌 Table of Contents
 - [Overview](#-overview)
-- [Problem Statement](#-problem-statement)
+- [Problem](#-problem)
 - [Key Features](#-key-features)
 - [Physics Core & Mathematical Foundation](#-physics-core--mathematical-foundation)
 - [End-to-End System Architecture](#-end-to-end-system-architecture)
@@ -35,7 +35,7 @@ By fusing **Chandrayaan-2 DFSAR** full-polarimetric/dual-frequency radar observa
 
 ---
 
-## 🎯 Problem Statement
+## 🎯 Problem
 
 > **Detection and Characterization of Subsurface Ice in Lunar South Polar Regions Using Chandrayaan-2 Radar and Imagery Data for Landing Site and Rover Traverse Planning**
 
